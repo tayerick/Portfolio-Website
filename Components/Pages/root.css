@@ -1,0 +1,39 @@
+/* ==========================================
+   1. GLOBAL THEME DESIGN TOKENS
+   ========================================== */
+
+/* 1A. Default Theme: Light Mode (When browser prefers light, or doesn't specify) */
+:root {
+    --color-bg: #eeeeee;       /* Maps to your light background */
+    --color-txt: #393e46;      /* Maps to your light text */
+    --color-header: #00adb5;   /* Crisp teal banner */
+    --color-txt-header: #222831;
+    
+    /* Keep these handy for explicit panel components */
+    --color-sidebar-bg: #222831; 
+    --color-sidebar-txt: #eeeeee;
+}
+
+/* 1B. Automatic Dynamic Shift: Dark Mode Preferred by Browser */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg: #222831;   /* Flips canvas to dark charcoal */
+        --color-txt: #eeeeee;  /* Flips body typography to light gray */
+        
+        /* You can adjust your header dynamically here if you want a softer teal in dark mode */
+        --color-header: #00adb5; 
+        --color-txt-header: #222831;
+        
+        /* If your resume sidebar should invert or stay dark, control it here */
+        --color-sidebar-bg: #1a1f26; 
+    }
+}
+
+/* ==========================================
+   2. APPLICATION
+   ========================================== */
+body {
+    background-color: var(--color-bg);
+    color: var(--color-txt);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth fade when switching modes */
+}
