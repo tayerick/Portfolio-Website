@@ -9,26 +9,62 @@
             name="viewport" 
             content="width=device-width, initial-scale=1.0">    
         <title>Taylor Erickson - Portfolio Website</title>
-        <link rel="stylesheet" href="Main.css">
-
+        <link href="Main.css" rel="stylesheet">
     </head>
-    <body>
+    <body>    
         <header>
-            <h1>Taylor's Portfolio</h1>
+            <h1>Taylor's Webpage</h1>
 
             <nav>
-                <a href="aboutme.html">About Me</a>
-                <a href="resume.html">My Resume</a>
+                <a href="Main.html">About Me</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="blog">Blog</a>
+                <a href="resume.html">Resume</a>
+                <a href="contact.html">Contact</a>
             </nav>
         </header>
         <main>
-            <img src = "../Images/intro_img.jpg" alt="Image of me at Disneyland."/>
-            <section class="introduction">
-                <h2>Hello and welcome to my web portfolio! </h2>
-                <p>My name is Taylor Erickson and this is my personal portfolio.  In it, 
-                    you will find an "about me" page, my resume, and a few other things 
-                    you might find interesting about me.
-                </p>
+            <section class="hero-container">
+                <div class="intro">
+                    <h2>Hello, I'm Taylor!</h2>
+                    <p>Software Developer</p>
+                    <nav>
+                        <a class="resume-btn" href="../../Lockheed Martin Resume.pdf" download="Taylor_Erickson_Resume.pdf">Download Resume</a>
+                    </nav>
+                </div>
+                
+                <picture>
+                    <img src="../Images/intro_img.jpg" alt="Taylor Erickson smiling in front of a brightly lit amusement park backdrop." class="personal-image">
+                </picture>
+            </section>
+
+            <section class="about-me-section" id="about">
+                <div class="about-text-container">
+                    <h2>About Me</h2>
+                    <p>
+                        I am an undergraduate Computer Science student at the University of San Diego. I enjoy hobbies such
+                        as weight lifting and mountain biking, and will occassionally play video games in my spare time at home.
+                        I love to cook, and I especially love to explore new methods of cooking.
+                    </p>
+                   
+                    <p>
+                        Prior to my journey into software engineering, I proudly served five years in the United States Marine Corps
+                        as aircrew for the MV-22 Osprey.  During this time, I was able to explore so much of the world and gain 
+                        extensive experience in aviation.  Below are some pictures from my flight experiences.
+                    </p>
+                </div>
+
+                <div class="military-gallery">
+                    <picture class="img-left">
+                        <img src="../Images/Main-Left-Image.jpg" alt="Description of first military experience photo.">
+                    </picture>
+                    <picture class="img-center">
+                        <img src="../Images/Main-Center-Image.jpg" alt="Description of center military experience photo.">
+                    </picture>
+                    <picture class="img-right">
+                        <img src="../Images/Main-Right-image.jpg" alt="Description of third military experience photo.">
+                    </picture>
+                </div>
             </section>
         </main>
     </body>
