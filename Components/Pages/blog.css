@@ -10,10 +10,7 @@ body {
     background-color: var(--color-bg);
     color: var(--color-txt);
     font-family: system-ui, -apple-system, sans-serif; 
-    line-height: 1.6; 
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    line-height: 1.5; 
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -27,38 +24,47 @@ header {
     background-color: var(--color-header);
     color: var(--color-txt-header);
     padding: 1rem 2rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 header h1 {
-    font-size: 1.35rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
+    font-size: 1.5rem;
 }
 
 header nav {
     display: flex;
     align-items: center; 
-    gap: 1rem; 
+    gap: 1.5rem; 
 }
 
 header nav a {
     color: var(--color-txt-header);
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 1rem;
     padding: 0.5rem 0.75rem;
     border-radius: 4px;
     transition: background-color 0.2s ease;
 }
 
-header nav a:hover {
-    background-color: rgba(34, 40, 49, 0.08); 
+header nav a:hover, header nav a:focus {
+    background-color: rgba(34, 40, 49, 0.1); 
+    outline: 2px solid var(--color-txt-header);
 }
 
-header nav a:focus-visible {
-    outline: 3px solid var(--color-txt-header);
-    outline-offset: 2px;
+.theme-indicator {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-left: 0.5rem; 
+}
+
+.theme-indicator::before {
+    content: var(--theme-symbol);
+    color: var(--theme-symbol-color);
+    transition: color 0.3s ease; 
 }
 
 main {

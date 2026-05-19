@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Taylor Erickson</title>
+    <link href="portfolio.css" rel="stylesheet">
+    <script src="theme-toggle.js" defer></script>
+
+     <script>
+            (function () {
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme === 'dark') {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                } else if (savedTheme === 'light') {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                }
+            })();
+    </script>
+</head>
+<body>    
+    <header>
+        <h1>Taylor's Webpage</h1>
+        <nav>
+            <a href="Main.html">About Me</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="blog.html">Blog</a>
+            <a href="resume.html">Resume</a>
+            <a href="contact.html">Contact</a>
+            <theme-toggle></theme-toggle>
+        </nav>
+    </header>
+
+    <main>
+        <section class="portfolio-intro">
+            <h1>Project Portfolio</h1>
+            <p>A collection of software engineering initiatives focusing on full-stack architecture, systems programming, and test automation.</p>
+        </section>
+
+        <section class="portfolio-grid">
+            <h2 class="sr-only">Featured Projects</h2>
+
+            <article class="project-card">
+                <header class="project-header">
+                    <h2>Military Aviation Training Records Keeper</h2>
+                    <p class="project-meta">C# &bull; .NET (Blazor) &bull; PostgreSQL &bull; Npgsql</p>
+                </header>
+                <p class="project-description">
+                    Developed in collaboration with the Georgia Tech Research Institute to modernize military aviation training metrics. Engineered optimized backend data pipelines using custom PostgreSQL database functions accessed natively through Npgsql.
+                </p>
+                <footer class="project-links">
+                    <a href="https://github.com/YOUR-USERNAME/records-keeper" target="_blank" rel="noopener noreferrer" aria-label="View Records Keeper project source code on GitHub">View Source &rarr;</a>
+                </footer>
+            </article>
+
+            <article class="project-card">
+                <header class="project-header">
+                    <h2>Card Game Engine & Simulator</h2>
+                    <p class="project-meta">Java &bull; NUnit Testing Framework</p>
+                </header>
+                <p class="project-description">
+                    A desktop simulator applying advanced object-oriented design and rule enforcement matrix constraints. Built using comprehensive behavioral test logic suites engineered entirely via the NUnit automation framework to enforce strict domain boundaries.
+                </p>
+                <footer class="project-links">
+                    <a href="https://github.com/YOUR-USERNAME/card-simulator" target="_blank" rel="noopener noreferrer" aria-label="View Card Game Simulator source code on GitHub">View Source &rarr;</a>
+                </footer>
+            </article>
+
+            <article class="project-card">
+                <header class="project-header">
+                    <h2>FAT32 Custom Volume Provisioner</h2>
+                    <p class="project-meta">C &bull; Operating System Internals</p>
+                </header>
+                <p class="project-description">
+                    A systems-level utility built to interact directly with raw block streams to handle sector-level allocation, directory cluster chain mapping, and table indexing for custom FAT32 storage volumes.
+                </p>
+                <footer class="project-links">
+                    <a href="https://github.com/YOUR-USERNAME/fat32-provisioner" target="_blank" rel="noopener noreferrer" aria-label="View FAT32 volume provisioner source code on GitHub">View Source &rarr;</a>
+                </footer>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Taylor Erickson. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -36,20 +36,18 @@ class ThemeToggle extends HTMLElement {
         const button = this.querySelector('#theme-btn');
 
         button.addEventListener('click', () => {
-        
             const currentTheme = document.documentElement.getAttribute('data-theme');
             
             if (currentTheme === 'dark') {
                 document.documentElement.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light'); 
+                localStorage.setItem('theme', 'light');
             } else {
                 document.documentElement.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');  
+                localStorage.setItem('theme', 'dark');
             }
         });
     }
 }
-
 
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
