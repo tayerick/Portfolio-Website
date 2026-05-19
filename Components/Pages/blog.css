@@ -17,13 +17,14 @@ body {
 header {
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 10; 
     display: flex;
     justify-content: space-between; 
     align-items: center;
     background-color: var(--color-header);
     color: var(--color-txt-header);
     padding: 1rem 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 header h1 {
@@ -73,6 +74,9 @@ main {
     max-width: 800px;
     margin: 3.5rem auto;
     padding: 0 1.5rem;
+    
+    position: relative;
+    z-index: 1; 
 }
 
 .blog-intro {
