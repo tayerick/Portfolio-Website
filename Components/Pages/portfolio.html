@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Taylor Erickson</title>
+    
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+            else if (savedTheme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+        })();
+    </script>
+
     <link href="portfolio.css" rel="stylesheet">
     <script src="theme-toggle.js" defer></script>
-
-     <script>
-            (function () {
-                const savedTheme = localStorage.getItem('theme');
-                if (savedTheme === 'dark') {
-                    document.documentElement.setAttribute('data-theme', 'dark');
-                } else if (savedTheme === 'light') {
-                    document.documentElement.setAttribute('data-theme', 'light');
-                }
-            })();
-    </script>
+    <script src="github-card.js" defer></script>
 </head>
 <body>    
     <header>
@@ -78,6 +77,16 @@
                     <a href="https://github.com/YOUR-USERNAME/fat32-provisioner" target="_blank" rel="noopener noreferrer" aria-label="View FAT32 volume provisioner source code on GitHub">View Source &rarr;</a>
                 </footer>
             </article>
+        </section>
+
+        <section class="api-demonstration">
+            <h2 style="text-align: center; margin-top: 4rem; margin-bottom: 0.5rem; font-size: 1.75rem;">Live GitHub Metrics</h2>
+            
+            <github-user-card username="tayerick">
+                <p style="text-align: center; font-style: italic; margin: 1.5rem 0;">
+                    View my live network metrics on <a href="https://github.com/tayerick" target="_blank" rel="noopener noreferrer" style="color: var(--color-header);">GitHub Profile Overview</a>.
+                </p>
+            </github-user-card>
         </section>
     </main>
 
