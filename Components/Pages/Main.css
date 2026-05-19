@@ -220,3 +220,12 @@ picture {
         border: none;
     }
 }
+
+footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    margin-top: auto;
+    font-size: 0.9rem;
+    opacity: 0.75;
+    border-top: 1px solid var(--color-border-resume, rgba(0, 0, 0, 0.05));
+}
