@@ -7,7 +7,6 @@
 }
 
 body {
-    /* Fixed: Now uses the centralized theme source of truth tokens */
     background-color: var(--color-bg);
     color: var(--color-txt);
     font-family: system-ui, -apple-system, sans-serif; 
@@ -23,7 +22,6 @@ header {
     justify-content: space-between; 
     align-items: center;
     background-color: var(--color-header);
-    /* Fixed: Links the header text color to the responsive theme variable */
     color: var(--color-txt-header);
     padding: 1rem 2rem;
 }
@@ -34,12 +32,11 @@ header h1 {
 
 header nav {
     display: flex;
-    align-items: center; /* Aligns links and your theme symbol perfectly on the cross axis */
+    align-items: center; 
     gap: 1.5rem; 
 }
 
 header nav a {
-    /* Fixed: Tracks adaptive header text variables */
     color: var(--color-txt-header);
     text-decoration: none;
     font-weight: 600;
