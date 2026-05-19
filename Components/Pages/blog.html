@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Taylor Erickson</title>
+    <link href="blog.css" rel="stylesheet">
+    <script src="theme-toggle.js" defer></script>
+</head>
+<body>    
+    <header>
+        <h1>Taylor's Webpage</h1>
+        <nav>
+            <a href="Main.html">About Me</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="blog.html">Blog</a>
+            <a href="resume.html">Resume</a>
+            <a href="contact.html">Contact</a>
+            <theme-toggle></theme-toggle>
+        </nav>
+    </header>
+
+    <main>
+        <section class="blog-intro">
+            <h1>Technical Blog</h1>
+            <p>Thoughts, deep-dives, and tutorials on software engineering, system architecture, and low-level development.</p>
+        </section>
+
+        <section class="blog-feed">
+            <h2 class="sr-only">Recent Articles</h2>
+
+            <article class="blog-card">
+                <header class="post-header">
+                    <h2>Understanding Operating System Internals and Custom FAT32 Volume Construction</h2>
+                    <time datetime="2026-05-10">May 10, 2026</time>
+                </header>
+                <p>A deep dive into file system structures, partition geometry, and the mechanics of manually tracking cluster chains down at the sector level without relying on standard OS abstractions.</p>
+                <footer class="post-footer">
+                    <a href="blog/fat32-internals.html" aria-label="Read full article on FAT32 internals">Read More &rarr;</a>
+                </footer>
+            </article>
+
+            <article class="blog-card">
+                <header class="post-header">
+                    <h2>Optimizing Database Operations with Npgsql and PostgreSQL Functions</h2>
+                    <time datetime="2026-04-18">April 18, 2026</time>
+                </header>
+                <p>Analyzing performance bottlenecks in modern .NET data layers and exploring how utilizing native PostgreSQL features can minimize serialization latency over network boundaries.</p>
+                <footer class="post-footer">
+                    <a href="blog/npgsql-optimization.html" aria-label="Read full article on Npgsql optimization">Read More &rarr;</a>
+                </footer>
+            </article>
+
+            <article class="blog-card">
+                <header class="post-header">
+                    <h2>Architecting Extensible Unit Tests Using NUnit</h2>
+                    <time datetime="2026-03-24">March 24, 2026</time>
+                </header>
+                <p>Why structured test arrangement matters. A breakdown of utilizing NUnit features to build readable, isolated, and highly maintainable test suites for object-oriented components.</p>
+                <footer class="post-footer">
+                    <a href="blog/nunit-architecture.html" aria-label="Read full article on NUnit architecture">Read More &rarr;</a>
+                </footer>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Taylor Erickson. All rights reserved.</p>
+    </footer>
+</body>
+</html>
