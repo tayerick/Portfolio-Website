@@ -7,12 +7,13 @@
 }
 
 body {
-    background-color: var(--color-bg-light);
-    color: var(--color-txt-light);
+    /* Fixed: Now uses the centralized theme source of truth tokens */
+    background-color: var(--color-bg);
+    color: var(--color-txt);
     font-family: system-ui, -apple-system, sans-serif; 
     line-height: 1.5; 
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 
 header {
     position: sticky;
@@ -22,6 +23,7 @@ header {
     justify-content: space-between; 
     align-items: center;
     background-color: var(--color-header);
+    /* Fixed: Links the header text color to the responsive theme variable */
     color: var(--color-txt-header);
     padding: 1rem 2rem;
 }
@@ -32,10 +34,12 @@ header h1 {
 
 header nav {
     display: flex;
+    align-items: center; /* Aligns links and your theme symbol perfectly on the cross axis */
     gap: 1.5rem; 
 }
 
 header nav a {
+    /* Fixed: Tracks adaptive header text variables */
     color: var(--color-txt-header);
     text-decoration: none;
     font-weight: 600;
@@ -45,54 +49,68 @@ header nav a {
     transition: background-color 0.2s ease;
 }
 
-
 header nav a:hover, header nav a:focus {
     background-color: rgba(34, 40, 49, 0.1); 
     outline: 2px solid var(--color-txt-header);
 }
 
-/* ==========================================
-   SEMANTIC RESUME CONTENT STYLING
-   ========================================== */
+.theme-indicator {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-left: 0.5rem; 
+}
+
+.theme-indicator::before {
+    content: var(--theme-symbol);
+    color: var(--theme-symbol-color);
+    transition: color 0.3s ease; 
+}
+
 
 .resume-container {
     max-width: 800px;
     margin: 2.5rem auto;
     padding: 2.5rem;
-    background-color: #ffffff; 
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    
+    background-color: var(--color-bg-resume, #ffffff);
+    color: var(--color-txt-resume, #2d3748);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Candidate Identification */
 .resume-header {
     text-align: center;
     margin-bottom: 2rem;
-    border-bottom: 2px solid #e2e8f0;
+    border-bottom: 2px solid var(--color-border-resume, #e2e8f0);
     padding-bottom: 1.5rem;
 }
 
 .candidate-name {
     font-size: 2.25rem;
     font-weight: 700;
-    color: #1a202c;
     letter-spacing: -0.5px;
+    color: var(--color-title-resume, #1a202c);
 }
 
 .candidate-title {
     font-size: 1.1rem;
     font-weight: 500;
-    color: #4a5568;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-top: 0.25rem;
+    color: var(--color-subtitle-resume, #4a5568);
 }
 
 .contact-info {
     font-style: normal;
     font-size: 0.9rem;
-    color: #718096;
     margin: 0.75rem 0;
+    color: var(--color-meta-resume, #718096);
 }
 
 .contact-info a {
@@ -106,13 +124,12 @@ header nav a:hover, header nav a:focus {
 
 .summary {
     font-size: 0.95rem;
-    color: #4a5568;
     max-width: 700px;
     margin: 0.75rem auto 0 auto;
     line-height: 1.6;
+    color: var(--color-subtitle-resume, #4a5568);
 }
 
-/* Layout Structural Blocks */
 .resume-section {
     margin-bottom: 2rem;
 }
@@ -120,18 +137,17 @@ header nav a:hover, header nav a:focus {
 .section-title {
     font-size: 1.25rem;
     text-transform: uppercase;
-    color: #2d3748;
     letter-spacing: 0.5px;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid var(--color-border-resume, #e2e8f0);
     padding-bottom: 0.25rem;
     margin-bottom: 1rem;
+    color: var(--color-section-title-resume, #2d3748);
 }
 
 .resume-item {
     margin-bottom: 1.25rem;
 }
 
-/* Meta Placement via Flexbox */
 .resume-item .item-header {
     display: flex;
     justify-content: space-between;
@@ -144,31 +160,30 @@ header nav a:hover, header nav a:focus {
 .item-name {
     font-size: 1.05rem;
     font-weight: 600;
-    color: #1a202c;
+    color: var(--color-title-resume, #1a202c);
 }
 
 .item-meta {
     font-size: 0.9rem;
-    color: #718096;
     font-weight: 500;
+    color: var(--color-meta-resume, #718096);
 }
 
 .item-sub-header {
     display: flex;
     justify-content: space-between;
     font-size: 0.95rem;
-    color: #4a5568;
     font-style: italic;
     margin-top: 0.1rem;
+    color: var(--color-subtitle-resume, #4a5568);
 }
 
 .location {
     font-style: normal;
-    color: #a0aec0;
     font-size: 0.85rem;
+    color: var(--color-location-resume, #a0aec0);
 }
 
-/* Lists and Alignment Rules */
 .item-bullets {
     margin-left: 1.25rem;
     margin-top: 0.4rem;
@@ -177,12 +192,11 @@ header nav a:hover, header nav a:focus {
 
 .item-bullets li {
     font-size: 0.925rem;
-    color: #4a5568;
     margin-bottom: 0.25rem;
     line-height: 1.5;
+    color: var(--color-subtitle-resume, #4a5568);
 }
 
-/* Education Specific Sub-Layout */
 .courses-section {
     margin-top: 0.5rem;
 }
@@ -190,7 +204,7 @@ header nav a:hover, header nav a:focus {
 .courses-title {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #2d3748;
+    color: var(--color-section-title-resume, #2d3748);
 }
 
 .courses-list {
@@ -203,11 +217,10 @@ header nav a:hover, header nav a:focus {
 
 .courses-list li {
     font-size: 0.9rem;
-    color: #4a5568;
     margin-bottom: 0.2rem;
+    color: var(--color-subtitle-resume, #4a5568);
 }
 
-/* Skills Presentation Elements */
 .skills-list {
     display: flex;
     flex-wrap: wrap;
@@ -217,15 +230,16 @@ header nav a:hover, header nav a:focus {
 }
 
 .skills-list li {
-    background-color: #edf2f7;
-    color: #2d3748;
     padding: 0.35rem 0.75rem;
     font-size: 0.875rem;
     font-weight: 500;
     border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    
+    background-color: var(--color-badge-bg-resume, #edf2f7);
+    color: var(--color-badge-txt-resume, #2d3748);
 }
 
-/* Responsive Adaptive Viewports */
 @media (max-width: 640px) {
     .resume-container {
         margin: 1rem;

@@ -7,12 +7,10 @@
 }
 
 body {
-    /* CHANGED: Uses generic variable names so they flip between light and dark automatically */
     background-color: var(--color-bg);
     color: var(--color-txt);
     font-family: system-ui, -apple-system, sans-serif; 
     line-height: 1.5; 
-    /* ADDED: Smooth transition effect when the system or button changes the theme */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -34,7 +32,7 @@ header h1 {
 
 header nav {
     display: flex;
-    align-items: center; /* Ensures the links align with a custom element toggle button */
+    align-items: center; 
     gap: 1.5rem; 
 }
 
@@ -51,6 +49,22 @@ header nav a {
 header nav a:hover, header nav a:focus {
     background-color: rgba(34, 40, 49, 0.1); 
     outline: 2px solid var(--color-txt-header);
+}
+
+.theme-indicator {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-left: 0.5rem; 
+}
+
+.theme-indicator::before {
+    content: var(--theme-symbol);
+    color: var(--theme-symbol-color);
+    transition: color 0.3s ease; 
 }
 
 main {
@@ -77,7 +91,6 @@ main {
 .intro h2 {
     font-size: clamp(2rem, 4vw + 1rem, 3.5rem); 
     font-weight: 700;
-    /* CHANGED: Uses a variable so headline turns bright/white in dark mode */
     color: var(--color-txt);
     margin-bottom: 0.5rem;
 }
@@ -96,7 +109,6 @@ picture {
     width: 400px;                  
     height: 400px;                  
     border-radius: 50%;             
-    /* CHANGED: Swapped hardcoded hex for variable to match the theme shift */
     border: .5rem solid var(--color-txt);    
     object-fit: cover;            
 }
@@ -117,7 +129,6 @@ picture {
     border-radius: 6px; 
     font-size: 1.1rem; 
     font-weight: 600;
-    /* CHANGED: Leverages theme variables to maintain visibility and theme coherence */
     background-color: var(--color-txt);
     color: var(--color-bg);
     border: 2px solid transparent;
@@ -131,13 +142,13 @@ picture {
     outline: none;
 }
 
+
 .about-me-section {
     display: flex;
     flex-direction: column;
     gap: 4rem;
     padding-top: 4rem;
-    /* CHANGED: Swapped black border transparency for a style that shows up on dark backgrounds */
-    border-top: 2px solid rgba(255, 255, 255, 0.1);
+    border-top: 2px solid rgba(57, 62, 70, 0.15);
 }
 
 .about-text-container p {
@@ -185,7 +196,6 @@ picture {
 }
 .img-center img {
     aspect-ratio: 1 / 1; 
-    /* CHANGED: Tracks dynamic theme background to keep the framing flush */
     border: 0.5rem solid var(--color-bg); 
 }
 
